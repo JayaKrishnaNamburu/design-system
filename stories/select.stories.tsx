@@ -1,7 +1,5 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import { ThemeProvider } from "styled-components";
-import { DarkTheme, DefaultTheme, CustomTheme } from "../src/theme";
 import { Select } from "../src";
 import { OptionConfig } from "../src/types";
 
@@ -22,12 +20,19 @@ const additationalProps = {
   placeholder: "Place holder coming from additational prop"
 };
 
-storiesOf("Select", module).add("Default", () => (
-  <ThemeProvider theme={DefaultTheme}>
+storiesOf("Select", module)
+  .add("Default", () => (
     <Select
       options={colourOptions}
       change={(value: OptionConfig) => console.log("selected", value)}
       isSearchable={false}
     />
-  </ThemeProvider>
-));
+  ))
+  .add("Custom Props", () => (
+    <Select
+      options={colourOptions}
+      change={(value: OptionConfig) => console.log("selected", value)}
+      isSearchable={false}
+      {...additationalProps}
+    />
+  ));

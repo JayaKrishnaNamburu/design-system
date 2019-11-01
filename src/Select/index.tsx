@@ -48,6 +48,7 @@ const Select: React.FunctionComponent<SelectProps> = ({
       onChange={change}
       placeholder={placeholder && placeholder}
       styles={colourStyles}
+      aria-label={placeholder ? placeholder : "Select"}
       {...customProps}
     />
   );
