@@ -34,11 +34,9 @@ const Toggle: React.FunctionComponent<ToggleProps> = ({
           color={theme.colors.background}
           checked={selected}
           aria-label={selected ? "selected" : "un-selected"}
+          onChange={() => setToggleStatus(!selected)}
         />
-        <CheckBoxLabel
-          htmlFor="checkbox"
-          onClick={() => setToggleStatus(!selected)}
-        />
+        <CheckBoxLabel htmlFor="checkbox" />
       </CheckBoxWrapper>
       <StyledLabel htmlFor="checkbox">{children}</StyledLabel>
     </StyledWrapper>

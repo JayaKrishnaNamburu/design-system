@@ -1,5 +1,6 @@
 {
   "name": "design-system",
+  "description": "A design system that is fully personalized to meet my usual requirements with a11y out of hte box",
   "version": "0.0.0",
   "license": "MIT",
   "private": false,
@@ -15,10 +16,6 @@
   "types": "dist/cjs/index.d.ts",
   "module": "dist/esm/index.js",
   "dependencies": {
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "react-select": "^3.0.8",
-    "styled-components": "^4.4.0",
     "styled-system": "^5.1.2"
   },
   "peerDependnecies": {

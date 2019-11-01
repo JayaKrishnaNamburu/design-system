@@ -27,6 +27,7 @@ const Tabs: React.FunctionComponent<Tabprops> = ({
       {menuItems.map((menuItem: TabMenuItem) => {
         return (
           <StyledItem
+            key={`tab-${menuItem.id}`}
             role="tab"
             aria-selected={activeTab === menuItem.id}
             aria-label={menuItem.value}

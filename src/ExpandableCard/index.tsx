@@ -25,15 +25,25 @@ const ExpandableCard: React.FunctionComponent<ExpandableCardProps> = ({
       bg={theme.card.background}
       color={theme.card.text}
       ref={cardRef}
-      padding={3}
+      pt={3}
+      pl={3}
+      pr={3}
+      pb={1}
       onClick={() => setCardStatus(!show)}
       borderRadius={flatCard ? "none" : 4}
       boxShadow={defaultShadow}
     >
-      <StyledHeading>{heading}</StyledHeading>
+      <StyledHeading borderBottom={show && `1px solid #ccc`}>
+        {heading}
+      </StyledHeading>
       {show && (
         // @ts-ignore
-        <StyledCardBody mt={3} pr={4} onClick={() => setCardStatus(false)}>
+        <StyledCardBody
+          mt={3}
+          pr={4}
+          pb={2}
+          onClick={() => setCardStatus(false)}
+        >
           {children}
         </StyledCardBody>
       )}
@@ -52,6 +62,8 @@ const rollDown = keyframes`
 
 const StyledHeading = styled.div`
   ${space}
+  ${border}
+  padding-bottom: 10px;
 `;
 
 const StyledCardBody = styled.div`
