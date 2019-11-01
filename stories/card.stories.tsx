@@ -1,23 +1,53 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 import { ThemeProvider } from "styled-components";
-import { LighTheme, DarkTheme, BasicTheme } from "../src/theme";
+import { DarkTheme, DefaultTheme, CustomTheme } from "../src/theme";
+import { Card } from "../src";
 
-import { Card } from "../src/components/Card";
-
-storiesOf("Card", module)
-  .add("Light Theme", () => (
-    <ThemeProvider theme={LighTheme}>
-      <Card heading="Card Heading" />
+storiesOf("Default Card", module)
+  .add("Default", () => (
+    <ThemeProvider theme={DefaultTheme}>
+      <Card heading="Card Heading">
+        It is a long established fact that a reader will be distracted by the
+        readable content of a page when looking at its layout. The point of
+        using Lorem Ipsum is that it has a more-or-less normal distribution of
+        letters, as opposed to using 'Content here, content here', making it
+        look like readable English.{" "}
+      </Card>
     </ThemeProvider>
   ))
-  .add("Dark Theme", () => (
+  .add("Default Center", () => (
+    <ThemeProvider theme={DefaultTheme}>
+      <Card heading="Card Heading" align="center">
+        It is a long established fact that a reader will be distracted by the
+        readable content of a page when looking at its layout. The point of
+        using Lorem Ipsum is that it has a more-or-less normal distribution of
+        letters, as opposed to using 'Content here, content here', making it
+        look like readable English.{" "}
+      </Card>
+    </ThemeProvider>
+  ));
+
+storiesOf("Dark Theme Card", module)
+  .add("Default", () => (
     <ThemeProvider theme={DarkTheme}>
-      <Card heading="Card Heading" />
+      <Card heading="Card Heading">
+        It is a long established fact that a reader will be distracted by the
+        readable content of a page when looking at its layout. The point of
+        using Lorem Ipsum is that it has a more-or-less normal distribution of
+        letters, as opposed to using 'Content here, content here', making it
+        look like readable English.{" "}
+      </Card>
     </ThemeProvider>
   ))
-  .add("Basic Theme", () => (
-    <ThemeProvider theme={BasicTheme}>
-      <Card heading="Card Heading" />
+  .add("Default Center", () => (
+    <ThemeProvider theme={DarkTheme}>
+      <Card heading="Card Heading" align="center">
+        It is a long established fact that a reader will be distracted by the
+        readable content of a page when looking at its layout. The point of
+        using Lorem Ipsum is that it has a more-or-less normal distribution of
+        letters, as opposed to using 'Content here, content here', making it
+        look like readable English.{" "}
+      </Card>
     </ThemeProvider>
   ));

@@ -1,13 +1,14 @@
 {
-  "name": "design-system-tempalte",
+  "name": "design-system",
   "version": "0.0.0",
   "license": "MIT",
-  "private": true,
+  "private": false,
+  "sideEffects": false,
   "scripts": {
     "build": "rimraf dist && yarn build:cjs && yarn build:esm",
     "build:cjs": "tsc -p tsconfig-cjs.json",
     "build:esm": "tsc -p tsconfig-esm.json",
-    "storybook": "start-storybook",
+    "start": "start-storybook -p 9000",
     "build:storybook": "build-storybook -s public"
   },
   "main": "dist/cjs/index.js",
@@ -16,20 +17,25 @@
   "dependencies": {
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
+    "react-select": "^3.0.8",
     "styled-components": "^4.4.0",
     "styled-system": "^5.1.2"
   },
   "peerDependnecies": {
     "react": "^16.9.0",
-    "react-dom": "^16.9.0"
+    "react-dom": "^16.9.0",
+    "styled-components": "^4.4.0"
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",
-    "@storybook/react": "^5.2.1",
+    "@storybook/addon-actions": "^5.2.5",
+    "@storybook/addon-contexts": "^5.2.5",
+    "@storybook/addon-docs": "^5.2.5",
+    "@storybook/react": "^5.2.5",
     "@types/react": "^16.9.2",
     "@types/storybook__react": "^4.0.2",
-    "@types/styled-components": "^4.1.19",
-    "@types/styled-system": "^5.1.1",
+    "@types/styled-components": "^4.1.20",
+    "@types/styled-system": "^5.1.2",
     "babel-loader": "^8.0.6",
     "rimraf": "^3.0.0",
     "typescript": "^3.6.3"
