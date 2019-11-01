@@ -23,12 +23,13 @@ const Button: React.FunctionComponent<ButtonProps> = ({
   size,
   aria,
   flatButton,
-  disabled
+  disabled,
+  callback
 }) => {
   const theme: Theme = useContext(ThemeContext);
   const padding = size ? (size === "small" ? small : regular) : regular;
+
   return (
-    // @ts-ignore
     <StyledButton
       {...padding}
       bg={disabled ? theme.colors.disabled : theme.colors.background}
@@ -36,6 +37,7 @@ const Button: React.FunctionComponent<ButtonProps> = ({
       borderRadius={flatButton ? "none" : 4}
       lineHeight={2}
       fontSize={size === "small" ? "10px" : "14px"}
+      onClick={() => callback()}
       aria-label={
         aria
           ? aria
@@ -43,7 +45,7 @@ const Button: React.FunctionComponent<ButtonProps> = ({
           ? (children as string)
           : undefined
       }
-      disabled
+      disabled={disabled}
     >
       {children}
     </StyledButton>

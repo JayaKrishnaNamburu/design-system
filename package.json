@@ -1,10 +1,14 @@
 {
   "name": "design-system",
   "description": "A design system that is fully personalized to meet my usual requirements with a11y out of hte box",
+  "author": "JayaKrishnaNamburu",
   "version": "0.0.0",
   "license": "MIT",
   "private": false,
   "sideEffects": false,
+  "publishConifg": {
+    "access": "public"
+  },
   "scripts": {
     "build": "rimraf dist && yarn build:cjs && yarn build:esm",
     "build:cjs": "tsc -p tsconfig-cjs.json",
@@ -16,6 +20,10 @@
   "types": "dist/cjs/index.d.ts",
   "module": "dist/esm/index.js",
   "dependencies": {
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-select": "^3.0.8",
+    "styled-components": "^4.4.0",
     "styled-system": "^5.1.2"
   },
   "peerDependnecies": {
@@ -25,6 +33,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",
+    "@storybook/addon-a11y": "^5.2.5",
     "@storybook/addon-actions": "^5.2.5",
     "@storybook/addon-contexts": "^5.2.5",
     "@storybook/addon-docs": "^5.2.5",

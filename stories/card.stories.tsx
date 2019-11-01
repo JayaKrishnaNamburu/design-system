@@ -1,7 +1,7 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 import { ThemeProvider } from "styled-components";
-import { DarkTheme, DefaultTheme, CustomTheme } from "../src/theme";
+import { DefaultTheme } from "../src/theme";
 import { Card } from "../src";
 
 storiesOf("Default Card", module)

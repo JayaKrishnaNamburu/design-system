@@ -38,7 +38,7 @@ const Toggle: React.FunctionComponent<ToggleProps> = ({
         />
         <CheckBoxLabel htmlFor="checkbox" />
       </CheckBoxWrapper>
-      <StyledLabel htmlFor="checkbox">{children}</StyledLabel>
+      <StyledLabel>{children}</StyledLabel>
     </StyledWrapper>
   );
 };

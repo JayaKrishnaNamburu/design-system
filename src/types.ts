@@ -33,6 +33,7 @@ export interface ButtonProps {
   aria?: string;
   flatButton?: boolean;
   disabled?: boolean;
+  callback: () => void;
 }
 
 export interface CardProps {
