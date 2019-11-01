@@ -5,7 +5,8 @@ import { ToggleProps } from "../types";
 
 const Toggle: React.FunctionComponent<ToggleProps> = ({
   callback,
-  checked
+  checked,
+  children
 }) => {
   const [selected, setToggleStatus] = useState(checked ? checked : false);
   const theme: Theme = useContext(ThemeContext);
@@ -23,24 +24,39 @@ const Toggle: React.FunctionComponent<ToggleProps> = ({
   }, []);
 
   return (
-    <CheckBoxWrapper>
-      <CheckBox
-        id="checkbox"
-        type="checkbox"
-        color={theme.colors.background}
-        checked={selected}
-      />
-      <CheckBoxLabel
-        htmlFor="checkbox"
-        onClick={() => setToggleStatus(!selected)}
-      />
-    </CheckBoxWrapper>
+    <StyledWrapper>
+      <CheckBoxWrapper>
+        <CheckBox
+          role="switch"
+          aria-checked={selected}
+          id="checkbox"
+          type="checkbox"
+          color={theme.colors.background}
+          checked={selected}
+          aria-label={selected ? "selected" : "un-selected"}
+        />
+        <CheckBoxLabel
+          htmlFor="checkbox"
+          onClick={() => setToggleStatus(!selected)}
+        />
+      </CheckBoxWrapper>
+      <StyledLabel htmlFor="checkbox">{children}</StyledLabel>
+    </StyledWrapper>
   );
 };
 
 export default Toggle;
 
-const CheckBoxWrapper = styled.div`
+const StyledLabel = styled.label`
+  margin-top: 3px;
+  margin-left: 5px;
+`;
+
+const StyledWrapper = styled.div`
+  display: flex;
+`;
+
+const CheckBoxWrapper = styled.span`
   position: relative;
 `;
 const CheckBoxLabel = styled.label`

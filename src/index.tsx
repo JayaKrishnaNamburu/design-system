@@ -5,7 +5,7 @@ import Toggle from "./Toggle";
 import Growl from "./Growl";
 import ProgressBar from "./ProgressBar";
 import Select from "./Select";
-import Tabs from "./Tabs";
+import SimpleTabs from "./SimpleTabs";
 
 export {
   Card,
@@ -15,5 +15,5 @@ export {
   Growl,
   ProgressBar,
   Select,
-  Tabs
+  SimpleTabs
 };

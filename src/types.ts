@@ -1,10 +1,12 @@
 export interface Tabprops {
+  active?: number;
   change: (selectedTab: TabMenuItem) => void;
   menuItems: TabMenuItem[];
+  ariaTabsHeading?: string;
 }
 
 export interface TabMenuItem {
-  id?: number;
+  id: number;
   value: string;
 }
 

@@ -11,31 +11,13 @@ const testfunc = status => {
 storiesOf("Toggle", module)
   .add("Default", () => (
     <ThemeProvider theme={DefaultTheme}>
-      <Toggle callback={testfunc} />
-    </ThemeProvider>
-  ))
-  .add("Dark", () => (
-    <ThemeProvider theme={DarkTheme}>
-      <Toggle callback={testfunc} />
-    </ThemeProvider>
-  ))
-  .add("Custom", () => (
-    <ThemeProvider theme={CustomTheme}>
-      <Toggle callback={testfunc} />
+      <Toggle callback={testfunc}>Display Mode</Toggle>
     </ThemeProvider>
   ))
   .add("Default - Checked", () => (
     <ThemeProvider theme={DefaultTheme}>
-      <Toggle callback={testfunc} checked />
-    </ThemeProvider>
-  ))
-  .add("Dark - Checked", () => (
-    <ThemeProvider theme={DarkTheme}>
-      <Toggle callback={testfunc} checked />
-    </ThemeProvider>
-  ))
-  .add("Custom - Checked", () => (
-    <ThemeProvider theme={CustomTheme}>
-      <Toggle callback={testfunc} checked />
+      <Toggle callback={testfunc} checked>
+        Display Mode
+      </Toggle>
     </ThemeProvider>
   ));

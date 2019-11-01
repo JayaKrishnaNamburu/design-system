@@ -22,32 +22,12 @@ const additationalProps = {
   placeholder: "Place holder coming from additational prop"
 };
 
-storiesOf("Select", module)
-  .add("Default", () => (
-    <ThemeProvider theme={DefaultTheme}>
-      <Select
-        options={colourOptions}
-        change={(value: OptionConfig) => console.log("selected", value)}
-        isSearchable={false}
-      />
-    </ThemeProvider>
-  ))
-  .add("Custom", () => (
-    <ThemeProvider theme={CustomTheme}>
-      <Select
-        options={colourOptions}
-        change={(value: OptionConfig) => console.log("selected", value)}
-        isSearchable
-      />
-    </ThemeProvider>
-  ))
-  .add("Dark", () => (
-    <ThemeProvider theme={DarkTheme}>
-      <Select
-        customProps={additationalProps}
-        options={colourOptions}
-        change={(value: OptionConfig) => console.log("selected", value)}
-        isSearchable
-      />
-    </ThemeProvider>
-  ));
+storiesOf("Select", module).add("Default", () => (
+  <ThemeProvider theme={DefaultTheme}>
+    <Select
+      options={colourOptions}
+      change={(value: OptionConfig) => console.log("selected", value)}
+      isSearchable={false}
+    />
+  </ThemeProvider>
+));

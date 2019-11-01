@@ -17,27 +17,3 @@ storiesOf("Default ProgressBar", module)
       <ProgressBar progress={progress} size="small" label="Progress" />
     </ThemeProvider>
   ));
-
-storiesOf("Dark ProgressBar", module)
-  .add("Regular", () => (
-    <ThemeProvider theme={DarkTheme}>
-      <ProgressBar progress={progress} animate label="Progress" />
-    </ThemeProvider>
-  ))
-  .add("Small", () => (
-    <ThemeProvider theme={DarkTheme}>
-      <ProgressBar progress={progress} size="small" label="Progress" />
-    </ThemeProvider>
-  ));
-
-storiesOf("Custom ProgressBar", module)
-  .add("Regular", () => (
-    <ThemeProvider theme={CustomTheme}>
-      <ProgressBar progress={progress} animate label="Progress" />
-    </ThemeProvider>
-  ))
-  .add("Small", () => (
-    <ThemeProvider theme={CustomTheme}>
-      <ProgressBar progress={progress} size="small" label="Progress" />
-    </ThemeProvider>
-  ));
