@@ -9,6 +9,10 @@
   "publishConifg": {
     "access": "public"
   },
+  "repository": {
+    "url": "https://github.com/JayaKrishnaNamburu/design-system",
+    "type": "git"
+  },
   "scripts": {
     "build": "rimraf lib && yarn build:cjs && yarn build:esm",
     "build:cjs": "tsc -p tsconfig-cjs.json",
@@ -16,14 +20,11 @@
     "start": "start-storybook -p 9000",
     "build:storybook": "build-storybook -s public"
   },
-  "main": "dist/cjs/index.js",
-  "types": "dist/cjs/index.d.ts",
-  "module": "dist/esm/index.js",
+  "main": "lib/cjs/index.js",
+  "types": "lib/cjs/index.d.ts",
+  "module": "lib/esm/index.js",
   "dependencies": {
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
     "react-select": "^3.0.8",
-    "styled-components": "^4.4.0",
     "styled-system": "^5.1.2"
   },
   "peerDependnecies": {
@@ -32,6 +33,9 @@
     "styled-components": "^4.4.0"
   },
   "devDependencies": {
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "styled-components": "^4.4.0",
     "@babel/core": "^7.6.2",
     "@storybook/addon-a11y": "^5.2.5",
     "@storybook/addon-actions": "^5.2.5",
