@@ -10,7 +10,7 @@
     "access": "public"
   },
   "scripts": {
-    "build": "rimraf dist && yarn build:cjs && yarn build:esm",
+    "build": "rimraf lib && yarn build:cjs && yarn build:esm",
     "build:cjs": "tsc -p tsconfig-cjs.json",
     "build:esm": "tsc -p tsconfig-esm.json",
     "start": "start-storybook -p 9000",
@@ -38,11 +38,18 @@
     "@storybook/addon-docs": "^5.2.5",
     "@storybook/react": "^5.2.5",
     "@types/react": "^16.9.2",
+    "@types/react-dom": "^16.9.3",
     "@types/storybook__react": "^4.0.2",
     "@types/styled-components": "^4.1.20",
     "@types/styled-system": "^5.1.2",
     "babel-loader": "^8.0.6",
     "rimraf": "^3.0.0",
-    "typescript": "^3.6.3"
+    "source-map-loader": "^0.2.4",
+    "styled-components-ts": "^0.0.15",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.6.4",
+    "typescript-plugin-styled-components": "^1.4.3",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
   }
 }

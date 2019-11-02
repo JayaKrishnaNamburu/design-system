@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import styled, { ThemeContext, keyframes, css } from "styled-components";
-import { layout, color } from "styled-system";
+import styledTS from 'styled-components-ts';
+import { layout, color, LayoutProps, ColorProps } from "styled-system";
 import Theme from "../theme";
 import { ProgressBarProps } from "../types";
 
@@ -43,7 +44,7 @@ const ProgressBar: React.FunctionComponent<ProgressBarProps> = ({
 
 export default ProgressBar;
 
-const StylesSlider = styled.div`
+const StylesSlider = styledTS<ColorProps & LayoutProps>(styled.div)`
   ${color}
   ${layout}
   width: inherit;
@@ -52,7 +53,13 @@ const StylesSlider = styled.div`
   margin: 5px;
 `;
 
-const StyledProgress = styled.span`
+interface ProgressProps {
+  shouldAnimate: boolean
+}
+
+type ProgressSliderProps = ColorProps & LayoutProps & ProgressProps
+
+const StyledProgress = styledTS<ProgressSliderProps>(styled.span)`
   ${color}
   ${layout}
   border-radius: 8px;

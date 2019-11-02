@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { TabMenuItem, Tabprops } from "../types";
 import styled, { css } from "styled-components";
-import { color, border } from "styled-system";
+import styledTS from 'styled-components-ts'
+import { border, BorderProps, space, SpaceProps } from "styled-system";
 
 const Tabs: React.FunctionComponent<Tabprops> = ({
   active,
@@ -46,14 +47,18 @@ const Tabs: React.FunctionComponent<Tabprops> = ({
 
 export default Tabs;
 
-const StyledTabWrapper = styled.ul`
-  ${color}
+const StyledTabWrapper = styledTS<SpaceProps>(styled.ul)`
+  ${space}
   display: flex;
   list-style: none;
   padding: 8px;
 `;
 
-const StyledItem = styled.li`
+interface ItemProps {
+  showBorder: boolean
+}
+
+const StyledItem = styledTS<BorderProps & ItemProps>(styled.li)`
   ${border}
   cursor: pointer;
   text-align: center;
@@ -68,9 +73,9 @@ const StyledItem = styled.li`
     position: absolute;
     width: 100%;
     border-bottom: ${(props: any) =>
-      props.showBorder
-        ? css`4px solid ${props.theme.colors.background}`
-        : undefined};
+    props.showBorder
+      ? css`4px solid ${props.theme.colors.background}`
+      : undefined};
     bottom: 0;
     border-radius: 6px;
   }

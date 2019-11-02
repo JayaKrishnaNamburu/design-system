@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { space, color } from "styled-system";
+import styledTS from 'styled-components-ts'
+import { space, color, SpaceProps, ColorProps } from "styled-system";
 
 interface GrowlProps {
   list: GrowlBody[];
@@ -45,7 +46,7 @@ const Growl: React.FunctionComponent<GrowlProps> = ({ list }) => {
 
 export default Growl;
 
-const StyledGrowl = styled.div`
+const StyledGrowl = styledTS<SpaceProps & ColorProps>(styled.div)`
   ${space}
   ${color}
   font-size: 1rem;

@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import styled, { ThemeContext } from "styled-components";
-import { color, layout, space, border, typography } from "styled-system";
+import styledTS from 'styled-components-ts'
+import { color, layout, space, border, typography, ColorProps, LayoutProps, SpaceProps, BorderProps, TypographyProps } from "styled-system";
 import Theme from "../theme";
 import { ButtonProps } from "../types";
 
@@ -42,8 +43,8 @@ const Button: React.FunctionComponent<ButtonProps> = ({
         aria
           ? aria
           : typeof children === "string"
-          ? (children as string)
-          : undefined
+            ? (children as string)
+            : undefined
       }
       disabled={disabled}
     >
@@ -54,7 +55,11 @@ const Button: React.FunctionComponent<ButtonProps> = ({
 
 export default Button;
 
-const StyledButton = styled.button`
+interface StyledButtonProps {
+  disabled: boolean
+}
+
+const StyledButton = styledTS<ColorProps & LayoutProps & SpaceProps & BorderProps & TypographyProps & StyledButtonProps>(styled.button)`
   ${color}
   ${layout}
   ${space}

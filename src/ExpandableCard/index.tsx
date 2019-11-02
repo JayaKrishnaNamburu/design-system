@@ -33,9 +33,12 @@ const ExpandableCard: React.FunctionComponent<ExpandableCardProps> = ({
       borderRadius={flatCard ? "none" : 4}
       boxShadow={defaultShadow}
     >
-      <StyledHeading borderBottom={show && `1px solid #ccc`}>
-        {heading}
-      </StyledHeading>
+      {
+        // @ts-ignore
+        <StyledHeading borderBottom={show && `1px solid #ccc`}>
+          {heading}
+        </StyledHeading>
+      }
       {show && (
         // @ts-ignore
         <StyledCardBody
@@ -61,8 +64,6 @@ const rollDown = keyframes`
 `;
 
 const StyledHeading = styled.div`
-  ${space}
-  ${border}
   padding-bottom: 10px;
 `;
 
