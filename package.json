@@ -26,12 +26,12 @@
   "dependencies": {
     "react-select": "^3.0.8",
     "styled-system": "^5.1.2",
-    "styled-components": "^4.4.0",
     "typescript-plugin-styled-components": "^1.4.3"
   },
   "peerDependnecies": {
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
+    "styled-components": "^4.4.0"
   },
   "devDependencies": {
     "react": "^16.9.0",
