@@ -18,7 +18,8 @@
     "build:cjs": "tsc -p tsconfig-cjs.json",
     "build:esm": "tsc -p tsconfig-esm.json",
     "start": "start-storybook -p 9000",
-    "build-storybook": "build-storybook -c .storybook -o docs"
+    "build-storybook": "build-storybook -c .storybook -o docs",
+    "deploy-storybook": "storybook-to-ghpages"
   },
   "main": "lib/cjs/index.js",
   "types": "lib/cjs/index.d.ts",
@@ -29,8 +30,8 @@
     "styled-system": "^5.1.2"
   },
   "peerDependnecies": {
-    "react": "^16.8.0",
-    "react-dom": "^16.8.0",
+    "react": ">= ^16.9.0",
+    "react-dom": ">= ^16.9.0",
     "styled-components": "^4.4.0"
   },
   "devDependencies": {
