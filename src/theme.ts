@@ -18,9 +18,9 @@ interface CardConfig {
 export const DefaultTheme: Theme = {
   colors: {
     text: "#fff",
-    background: "#004175",
+    background: "#102c3c",
     disabled: "#dedede",
-    terinary: "#dddd"
+    terinary: '#667c8a'
   },
   card: {
     text: "#000",
