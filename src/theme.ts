@@ -1,22 +1,53 @@
-export const BasicTheme = {
+export interface Theme {
+  colors: Colors;
+  card: CardConfig;
+}
+
+interface Colors {
+  text: string;
+  background: string;
+  disabled: string;
+  terinary: string;
+}
+
+interface CardConfig {
+  text: string;
+  background: string;
+}
+
+export const DefaultTheme: Theme = {
   colors: {
-    primaryText: "#fff",
-    primaryBackground: "#004175"
+    text: "#fff",
+    background: "#102c3c",
+    disabled: "#dedede",
+    terinary: '#667c8a'
+  },
+  card: {
+    text: "#000",
+    background: "#fff"
   }
 };
 
-export const LighTheme = {
-  ...BasicTheme,
+export const DarkTheme: Theme = {
+  ...DefaultTheme,
   colors: {
-    ...BasicTheme.colors,
-    primaryBackground: "darkorange"
+    ...DefaultTheme.colors,
+    background: "#000"
+  },
+  card: {
+    text: "#fff",
+    background: "#414141"
   }
 };
 
-export const DarkTheme = {
-  ...BasicTheme,
+export const CustomTheme: Theme = {
+  ...DefaultTheme,
   colors: {
-    ...BasicTheme.colors,
-    primaryBackground: "#000"
+    text: "#fff",
+    background: "#774F9E",
+    disabled: "#dedede",
+    terinary: "#dddd"
   }
 };
+
+export default Theme;

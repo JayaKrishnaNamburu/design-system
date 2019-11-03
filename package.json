@@ -1,37 +1,60 @@
 {
-  "name": "design-system-tempalte",
+  "name": "@heighten/design-system",
+  "description": "A design system that is fully personalized to meet my usual requirements with a11y out of the box",
+  "author": "JayaKrishnaNamburu",
   "version": "0.0.0",
   "license": "MIT",
-  "private": true,
+  "private": false,
+  "sideEffects": false,
+  "publishConifg": {
+    "access": "public"
+  },
+  "repository": {
+    "url": "https://github.com/JayaKrishnaNamburu/design-system",
+    "type": "git"
+  },
   "scripts": {
-    "build": "rimraf dist && yarn build:cjs && yarn build:esm",
+    "build": "rimraf lib && yarn build:cjs && yarn build:esm",
     "build:cjs": "tsc -p tsconfig-cjs.json",
     "build:esm": "tsc -p tsconfig-esm.json",
-    "storybook": "start-storybook",
-    "build:storybook": "build-storybook -s public"
+    "start": "start-storybook -p 9000",
+    "build-storybook": "build-storybook -c .storybook -o docs",
+    "deploy-storybook": "storybook-to-ghpages"
   },
-  "main": "dist/cjs/index.js",
-  "types": "dist/cjs/index.d.ts",
-  "module": "dist/esm/index.js",
+  "main": "lib/cjs/index.js",
+  "types": "lib/cjs/index.d.ts",
+  "module": "lib/esm/index.js",
   "dependencies": {
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "styled-components": "^4.4.0",
+    "react-select": "^3.0.8",
+    "styled-components-ts": "^0.0.15",
     "styled-system": "^5.1.2"
   },
   "peerDependnecies": {
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0"
+    "react": ">= ^16.9.0",
+    "react-dom": ">= ^16.9.0",
+    "styled-components": "^4.4.0"
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",
-    "@storybook/react": "^5.2.1",
+    "@storybook/addon-a11y": "^5.2.5",
+    "@storybook/addon-actions": "^5.2.5",
+    "@storybook/addon-docs": "^5.2.5",
+    "@storybook/react": "^5.2.5",
+    "@storybook/storybook-deployer": "^2.8.1",
     "@types/react": "^16.9.2",
+    "@types/react-dom": "^16.9.3",
     "@types/storybook__react": "^4.0.2",
-    "@types/styled-components": "^4.1.19",
-    "@types/styled-system": "^5.1.1",
+    "@types/styled-components": "^4.1.20",
+    "@types/styled-system": "^5.1.2",
     "babel-loader": "^8.0.6",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
     "rimraf": "^3.0.0",
-    "typescript": "^3.6.3"
+    "source-map-loader": "^0.2.4",
+    "styled-components": "^4.4.0",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.6.4",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
   }
 }
